@@ -39,7 +39,8 @@ public class BankAccount {
     public void displayInfo() {
         System.out.println("\nAccount Name: " + this.accountName);
         System.out.println("Account Number: " + this.accountNumber);
-        System.out.println("Current Balance: " + this.availableBalance);
+        System.out.print("Current Balance: ");
+        System.out.printf("%.2f%n", this.availableBalance);
     }
 
     public int getAccountNumber() {

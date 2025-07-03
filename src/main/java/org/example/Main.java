@@ -61,7 +61,7 @@ public class Main {
                     scanner.nextLine();
                     for(BankAccount myBankAccount : bankAccount) {
                         if(myBankAccount.getAccountNumber() == getAccountNumber) {
-                            System.out.println("Current Balance: " + myBankAccount.getAvailableBalance());
+                            System.out.printf("Current Balance: %.2f%n", myBankAccount.getAvailableBalance());
                             System.out.print("Enter amount to deposit: ");
                             double depositAmount = scanner.nextDouble();
                             scanner.nextLine();
@@ -77,7 +77,7 @@ public class Main {
                     scanner.nextLine();
                     for(BankAccount myBankAccount : bankAccount) {
                         if(myBankAccount.getAccountNumber() == getAccountNumber) {
-                            System.out.println("Current Balance: " + myBankAccount.getAvailableBalance());
+                            System.out.printf("Current Balance: %.2f%n", myBankAccount.getAvailableBalance());
                             System.out.print("Enter amount to withdraw: ");
                             double withdrawAmount = scanner.nextDouble();
                             scanner.nextLine();
