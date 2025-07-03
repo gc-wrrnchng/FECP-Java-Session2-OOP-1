@@ -3,7 +3,9 @@ package org.example;
 public class BankAccount {
     private int accountNumber;
     private String accountName;
+    private double availableBalance;
     private double depositAmount;
+    private double newBalance;
 
     public BankAccount() {
 
@@ -31,13 +33,16 @@ public class BankAccount {
     }
 
     public void Withdraw(int accountNumber) {
+        System.out.print("Current Balance: " + this.availableBalance);
+        this.newBalance = availableBalance - depositAmount;
+        System.out.println("New Current Balance: " + this.newBalance);
 
     }
 
     public void displayInformation() {
         System.out.print("Account Name: " + this.accountName);
         System.out.print("Account Number: " + this.accountNumber);
-        System.out.print("Current Balance: " + this.depositAmount);
+        System.out.print("Current Balance: " + this.availableBalance);
     }
 
     public int getAccountNumber() {
