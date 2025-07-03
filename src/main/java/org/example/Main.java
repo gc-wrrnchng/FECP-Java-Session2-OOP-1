@@ -6,7 +6,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ArrayList<BankAccount> bankAccount = new ArrayList<>();
-        BankAccount bankDeposit = new BankAccount();
 
         int getChoice = 0;
 
@@ -17,13 +16,15 @@ public class Main {
             System.out.println("4. Deposit");
             System.out.println("5. Withdraw");
             System.out.println("6. Exit");
+            System.out.print("Enter your choice: ");
             getChoice = scanner.nextInt();
             scanner.nextLine();
 
             switch(getChoice) {
                 case 1: {
                     System.out.print("Account Number (10-digits): ");
-                    String getAccountNumber = scanner.nextLine();
+                    int getAccountNumber = scanner.nextInt();
+                    scanner.nextLine();
                     System.out.print("Account name: ");
                     String getAccountName = scanner.nextLine();
                     System.out.print("Amount to Deposit: ");
@@ -33,6 +34,9 @@ public class Main {
                     break;
                 }
                 case 2: {
+                    for (BankAccount myBankAccount : bankAccount) {
+                        myBankAccount.displayInfo();
+                    }
                     break;
                 }
                 case 3: {
