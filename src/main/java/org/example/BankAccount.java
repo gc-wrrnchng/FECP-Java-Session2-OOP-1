@@ -4,8 +4,6 @@ public class BankAccount {
     private int accountNumber;
     private String accountName;
     private double availableBalance;
-    private double depositAmount;
-    private double newBalance;
 
     public BankAccount() {
 
@@ -22,19 +20,20 @@ public class BankAccount {
         this.availableBalance = depositAmount;
     }
 
-    public void Deposit() {
-        if(depositAmount < 0) {
-            this.newBalance = this.availableBalance + depositAmount;
+    public void Deposit(double depositAmount) {
+        if(depositAmount > 0) {
+            this.availableBalance += depositAmount;
         } else {
             System.out.println("Not a valid amount.");
         }
     }
 
-    public void Withdraw() {
-        System.out.print("Current Balance: " + this.availableBalance);
-        this.newBalance = availableBalance - depositAmount;
-        System.out.println("New Current Balance: " + this.newBalance);
-
+    public void Withdraw(double withdrawAmount) {
+        if(withdrawAmount >= this.availableBalance || withdrawAmount > 0) {
+            this.availableBalance -= withdrawAmount;
+        } else {
+            System.out.println("Not a valid amount.");
+        }
     }
 
     public void displayInfo() {
@@ -44,6 +43,10 @@ public class BankAccount {
     }
 
     public int getAccountNumber() {
-        return accountNumber;
+        return this.accountNumber;
+    }
+
+    public double getAvailableBalance() {
+        return this.availableBalance;
     }
 }

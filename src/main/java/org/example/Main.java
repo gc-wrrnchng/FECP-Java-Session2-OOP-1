@@ -10,6 +10,7 @@ public class Main {
         int getChoice = 0;
 
         do {
+            System.out.println("\n=== Bank Menu ===");
             System.out.println("1. Create Account");
             System.out.println("2. View All Accounts");
             System.out.println("3. Check Balance");
@@ -22,7 +23,7 @@ public class Main {
 
             switch(getChoice) {
                 case 1: {
-                    System.out.print("Account Number (10-digits): ");
+                    System.out.print("Account Number (2025XXXXXX): ");
                     int getAccountNumber = scanner.nextInt();
                     scanner.nextLine();
                     System.out.print("Account name: ");
@@ -56,7 +57,40 @@ public class Main {
                 }
                 case 4: {
                     System.out.print("Enter account number to check: ");
-                    String getAccountNumber = scanner.nextLine();
+                    int getAccountNumber = scanner.nextInt();
+                    scanner.nextLine();
+                    for(BankAccount myBankAccount : bankAccount) {
+                        if(myBankAccount.getAccountNumber() == getAccountNumber) {
+                            System.out.println("Current Balance: " + myBankAccount.getAvailableBalance());
+                            System.out.print("Enter amount to deposit: ");
+                            double depositAmount = scanner.nextDouble();
+                            scanner.nextLine();
+                            myBankAccount.Deposit(depositAmount);
+                            break;
+                        }
+                    }
+                    break;
+                }
+                case 5: {
+                    System.out.print("Enter account number to withdraw from: ");
+                    int getAccountNumber = scanner.nextInt();
+                    scanner.nextLine();
+                    for(BankAccount myBankAccount : bankAccount) {
+                        if(myBankAccount.getAccountNumber() == getAccountNumber) {
+                            System.out.println("Current Balance: " + myBankAccount.getAvailableBalance());
+                            System.out.print("Enter amount to withdraw: ");
+                            double withdrawAmount = scanner.nextDouble();
+                            scanner.nextLine();
+                            myBankAccount.Withdraw(withdrawAmount);
+                        }
+                    }
+                    break;
+                }
+                case 6: {
+                    System.out.println("=== Thank you! ===");
+                    break;
+                }
+                default: {
                     break;
                 }
             }
