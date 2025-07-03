@@ -1,7 +1,7 @@
 package org.example;
 
 public class BankAccount {
-    private String accountNumber;
+    private int accountNumber;
     private String accountName;
     private double depositAmount;
 
@@ -9,26 +9,28 @@ public class BankAccount {
 
     }
 
-    public BankAccount(String accountNumber, String accountName) {
+    public BankAccount(int accountNumber, String accountName) {
         this.accountNumber = accountNumber;
         this.accountName = accountName;
     }
 
-    public BankAccount(String accountNumber, String accountName, double depositAmount) {
+    public BankAccount(int accountNumber, String accountName, double depositAmount) {
         this.accountNumber = accountNumber;
         this.accountName = accountName;
         this.depositAmount = depositAmount;
     }
 
     public void Deposit() {
-        if (accountNumber.length() != 10) {
+        String accountNumberString = String.valueOf(this.accountNumber);
+        if (accountNumberString.length() != 10) {
             System.out.println("Not a valid account number.");
         } else {
+
         }
 
     }
 
-    public void Withdraw() {
+    public void Withdraw(int accountNumber) {
 
     }
 
@@ -38,7 +40,7 @@ public class BankAccount {
         System.out.print("Current Balance: " + this.depositAmount);
     }
 
-    public String getAccountNumber() {
+    public int getAccountNumber() {
         return accountNumber;
     }
 }
