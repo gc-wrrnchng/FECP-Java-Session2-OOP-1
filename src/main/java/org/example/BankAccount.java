@@ -23,8 +23,11 @@ public class BankAccount {
     }
 
     public void Deposit() {
-
-
+        if(depositAmount < 0) {
+            this.newBalance = this.availableBalance + depositAmount;
+        } else {
+            System.out.println("Not a valid amount.");
+        }
     }
 
     public void Withdraw() {

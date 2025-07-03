@@ -34,12 +34,24 @@ public class Main {
                     break;
                 }
                 case 2: {
-                    for (BankAccount myBankAccount : bankAccount) {
+                    for(BankAccount myBankAccount : bankAccount) {
                         myBankAccount.displayInfo();
                     }
                     break;
                 }
                 case 3: {
+                    System.out.print("Enter Account number to check: ");
+                    int getAccountNumber = scanner.nextInt();
+                    scanner.nextLine();
+                    for(BankAccount myBankAccount : bankAccount) {
+                        if(myBankAccount.getAccountNumber() == getAccountNumber) {
+                            myBankAccount.displayInfo();
+                            break;
+                        } else {
+                            System.out.println("No account number in record.");
+                            break;
+                        }
+                    }
                     break;
                 }
                 case 4: {
