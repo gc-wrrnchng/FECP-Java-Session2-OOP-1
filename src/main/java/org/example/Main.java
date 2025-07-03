@@ -5,6 +5,8 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        ArrayList<BankAccount> bankAccount = new ArrayList<>();
+        BankAccount bankDeposit = new BankAccount();
 
         int getChoice = 0;
 
@@ -21,13 +23,25 @@ public class Main {
             switch(getChoice) {
                 case 1: {
                     System.out.print("Account Number (10-digits): ");
-                    int getAccountNumber = scanner.nextInt();
-                    scanner.nextLine();
+                    String getAccountNumber = scanner.nextLine();
                     System.out.print("Account name: ");
                     String getAccountName = scanner.nextLine();
                     System.out.print("Amount to Deposit: ");
                     double getDepositAmount = scanner.nextDouble();
                     scanner.nextLine();
+                    bankAccount.add(new BankAccount(getAccountNumber, getAccountName, getDepositAmount));
+                    break;
+                }
+                case 2: {
+                    break;
+                }
+                case 3: {
+                    break;
+                }
+                case 4: {
+                    System.out.print("Enter account number to check: ");
+                    String getAccountNumber = scanner.nextLine();
+                    break;
                 }
             }
         } while (getChoice != 6);
